@@ -8,6 +8,7 @@ import { ActivatedRoute, Params } from "@angular/router";
 })
 export class MoenchComponent implements OnInit {
   message = "Welcome to Moench";
+  imageUrl = "../assets/images/moench100.png";
 
   constructor(private route: ActivatedRoute) { }
 
@@ -16,6 +17,7 @@ export class MoenchComponent implements OnInit {
     this.route.params.subscribe((routeParams: Params) => {
        const floor = routeParams["floor"];
        this.message = `Moench ${floor}`;
+       this.imageUrl = `../assets/images/moench${floor}.png`;
      });
   }
 
